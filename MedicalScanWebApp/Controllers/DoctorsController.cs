@@ -21,7 +21,7 @@ namespace MedicalScanWebApp.Controllers {
 		public IActionResult GetDoctorsBySpecialization([FromQuery] string specialization) {
 			// LINQ query to query the database using EntityFramework
 			if (specialization.ToLower() == "all") {
-				// Consulta para obtener la lista de todos los doctores y sus especializaciones
+				// Query to get all the doctors
 				var allDoctorsWithSpecializations = _context.Doctors
 					.Select(d => new DoctorDto {
 						DoctorId = d.DoctorId,
@@ -32,7 +32,7 @@ namespace MedicalScanWebApp.Controllers {
 
 				return Ok(allDoctorsWithSpecializations);
 			} else {
-				
+				//Query to get doctors by specialty
 				var doctorsWithSpecialization = _context.Doctors
 					.Where(d => d.DoctorSpecialties.Any(ds => ds.Specialty.Name == specialization))
 					.Select(d => new DoctorDto {
