@@ -1,0 +1,23 @@
+#specialties {
+	font-weight: 700;
+	background-color: #60c18fca;
+	margin-bottom: 8px;
+	margin-top: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 9999;
+  }
+
+.icon-box {
+	width: 100%;
+	margin-bottom: 20px; 
+  }
+
+  #doctorSpecialties {
+	list-style: none;
+	padding: 0;
+  }
+
+  #doctorSpecialties li {
+	margin: 5px 0;
+  }
